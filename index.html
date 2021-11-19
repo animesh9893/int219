@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.8.2/angular-sanitize.min.js"
+        integrity="sha512-JkCv2gG5E746DSy2JQlYUJUcw9mT0vyre2KxE2ZuDjNfqG90Bi7GhcHUjLQ2VIAF1QVsY5JMwA1+bjjU5Omabw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./gv.css">
+    <script src="./app.js"></script>
+    <title>NewsPaper</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <div class="header" ng-controller="headerController">
+        <!-- top bar for quick links -->
+        <div class="top-bar flex  set-width align-center">
+            <div class="flex" ng-controller="topHeaderController">
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;">{{time}}</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;">{{date}}</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="signIn()">Sign In</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="join()">Join</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="membership()">Membership</div>
+            </div>
+            <div class="flex">
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="redirectTo('https://instagram.com')">Ig</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="redirectTo('https://twitter.com')">Twitter</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="redirectTo('https://linkedin.com')">Linkedin</div>
+                <div class="item-top-bar" style="padding-left: 8px;padding-right: 8px;" ng-click="redirectTo('https://youtube.com')">Youtube</div>
+            </div>
+        </div>
+        <!-- head bar -->
+        <div class="head-bar">
+            <div class="logo set-width" style="cursor: pointer;" ng-click="redirectToFunc('/');"><span style="height:100%;" class="flex align-center justify-center">NewsPaper</span></div>
+            <div class="nav-bar set-width flex" style="justify-content: space-between;">
+                <div class="menu-bar flex align-center">
+                    <div class="nav-bar-item" ng-click="redirectToFunc('/');">News</div>
+                    <div class="nav-bar-item" ng-click="redirectToFunc('/tweets');">Tweets</div>
+                    <div class="nav-bar-item" ng-click="redirectToFunc('/about');">About Us</div>
+                    <div class="nav-bar-item" ng-click="redirectToFunc('/StockMarket');">Stock Market</div>
+                    <div class="nav-bar-item" ng-click="redirectToFunc('/ContactUs');">Contract Us</div>
+                </div>
+                <div class="search-icon flex align-center"  ng-click="redirectToFunc('/search');">
+                    <svg style="width: 17px;" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path
+                            d="M946.371 843.601l-125.379-125.44c43.643-65.925 65.495-142.1 65.475-218.040 0.051-101.069-38.676-202.588-115.835-279.706-77.117-77.148-178.606-115.948-279.644-115.886-101.079-0.061-202.557 38.738-279.665 115.876-77.169 77.128-115.937 178.627-115.907 279.716-0.031 101.069 38.728 202.588 115.907 279.665 77.117 77.117 178.616 115.825 279.665 115.804 75.94 0.020 152.136-21.862 218.061-65.495l125.348 125.46c30.915 30.904 81.029 30.904 111.954 0.020 30.915-30.935 30.915-81.029 0.020-111.974zM705.772 714.925c-59.443 59.341-136.899 88.842-214.784 88.924-77.896-0.082-155.341-29.583-214.784-88.924-59.443-59.484-88.975-136.919-89.037-214.804 0.061-77.885 29.604-155.372 89.037-214.825 59.464-59.443 136.878-88.945 214.784-89.016 77.865 0.082 155.3 29.583 214.784 89.016 59.361 59.464 88.914 136.919 88.945 214.825-0.041 77.885-29.583 155.361-88.945 214.804z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div ng-view>
+        
+    </div>
+    
+
+
+
+    <div style="background-color: black;border-top: 1px solid black;" class="footer set-width">
+        All rights reserved by Animesh Shrivatri contact us <a href="mailto:animeshshrivatri@gmail.com">Animesh Shrivatri</a>.<br>
+    </div>
+
+</body>
+
+</html>

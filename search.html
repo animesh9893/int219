@@ -1,0 +1,18 @@
+<div style="min-height: 50vh;" class="search-main set-width" ng-controller="searchCtrl">
+    <!-- input feild -->
+    <div style="width: 100%;display: flex;justify-content: center;padding-top: 42px;">
+        <input type="text" ng-model="search" placeholder="Search"
+            style="width: 80%;padding-left: 8px;height: 3em;font-size: 1em;">
+    </div>
+    <!-- recommendation table -->
+    <div style="padding-top: 32px;">
+        <div
+            ng-click="redirectToFunc('/search/news/' + search)"
+            style="font-size: 1.1em;padding-left: 12px;padding-bottom: 12px;border-bottom: 1px solid gray;padding-top: 12px;cursor: pointer;">
+            Search In News : {{search}}</div>
+        <div 
+            ng-click="redirectToFunc('/search/tweets/' + search)"
+            style="font-size: 1.1em;padding-left: 12px;padding-bottom: 12px;border-bottom: 1px solid gray;padding-top: 12px;cursor: pointer;">
+            Search In Tweets : {{search}}</div>
+    </div>
+</div>

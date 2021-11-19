@@ -1,0 +1,156 @@
+<div class="set-width" style="padding-top: 14px;">
+    <!-- news div -->
+    <div class="news">
+        <!-- headline -->
+        <div class="headline flex" style="width: 100%;min-height: 500px;" ng-controller="newsHeadline">
+            <div class="headline1 hover-1" ng-click="redirectToFunc('/news/'+newsHeadline[0].id)" 
+                style="font-size: 2em;margin:2px;width: 50%;background-image: url('{{newsHeadline[0].image}}');">
+                <span>{{newsHeadline[0].title}}</span>
+            </div>
+            <div style="width: 50%;overflow: hidden;min-height: 500px;display: flex;flex-direction: column;">
+                <div class="headline1 hover-1" ng-click="redirectToFunc('/news/'+newsHeadline[1].id)" 
+                    style="font-size: 1.2em;margin:2px;width: 100%;height: 50%;background-image: url('{{newsHeadline[1].image}}');">
+                    <span>{{newsHeadline[1].title}}</span>
+                </div>
+                <div style="display:flex;height: 50%;">
+                    <div class="headline1 hover-1" ng-click="redirectToFunc('/news/'+newsHeadline[2].id)" 
+                        style="font-size: 1.2em;margin:2px;width: 50%;height: 100%;background-image: url('{{newsHeadline[2].image}}');">
+                        <span>{{newsHeadline[2].title}}</span>
+
+                    </div>
+                    <div class="headline1 hover-1" ng-click="redirectToFunc('/news/'+newsHeadline[3].id)"  
+                        style="font-size: 1.2em;margin:2px;width: 50%;height: 100%;background-image: url('{{newsHeadline[3].image}}');">
+                        <span>{{newsHeadline[3].title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- headline end -->
+        <!-- top news -->
+        <div style="width: 100%;display: flex;">
+            <div class="top-news">
+                <div style="width: 100%;text-align: center;font-size: 1.2em;font-weight: 600;padding-bottom: 4px;">Top
+                    News</div>
+                <div style="width: 100%;border-bottom: 4px solid yellowgreen;"></div>
+                <div class="flex" ng-controller="topNews">  
+                    <!-- one main news -->
+                    <div class="top-news-items">
+                        <div class="top-news-card" ng-click="redirectToFunc('/news/'+topNews[0].id)">
+                            <img style="max-width: 330px;"
+                                src="{{topNews[0].image}}">
+                            <div class="top-news-card-title">{{topNews[0].title}}</div>
+                            <div style="font-size: 13px;padding-bottom: 4px;">{{topNews[0].date}}</div>
+                            <div class="top-news-card-desc">{{topNews[0].synopsis}}</div>
+                        </div>
+                    </div>
+                    <!-- one main news end -->
+                    <div class="other-top-news">
+                        <!-- item -->
+                        <div class="other-top-news-items flex" ng-repeat="n in topNewsOther" ng-click="redirectToFunc('/news/'+n.id)">
+                            <img src="{{n.image}}"
+                                style="width: 150px;" alt="" srcset="">
+                            <div style="padding-left: 8px;">
+                                <div style="font-size:1.1em;">{{n.title}}</div>
+                                <div class="tags">
+                                    <span class="tag" ng-repeat="t in n.tag">{{t}}</span>
+                                </div>
+                                <div style="font-size: 13px;padding-bottom: 4px;">{{n.date}}</div>
+                            </div>
+                        </div>
+                        <!-- item end -->
+                    </div>
+                </div>
+                <div style="padding-top: 22px;"></div>
+                <div style="width: 100%;">
+                    <div class="reload-status">Last Updated : 18 Nov 2021 18:36:33 IST <span>Reload</span></div>
+                </div>
+                <!-- top news end -->
+
+                <!-- stock news -->
+                <div class="layout2" ng-controller="stockNews">
+                    <div style="width: 100%;text-align: center;font-size: 1.2em;font-weight: 600;padding-bottom: 4px;">
+                        Stock News</div>
+                    <div style="width: 100%;border-bottom: 4px solid rgb(100, 150, 100);"></div>
+                    <div class="flex" style="justify-content: space-around;">
+                        <!-- column 1 -->
+                        <div class="layout2-col">
+                            <!-- card -->
+                            <div class="layout2-card" ng-click="redirectToFunc('/news/'+stockNewsCol1[0].id)" >
+                                <img src="{{stockNewsCol1[0].image}}" alt="" srcset="">
+                                <div class="layout2-card-title">{{stockNewsCol1[0].title}}</div>
+                                <div style="font-size: 13px;padding-bottom: 4px;">{{stockNewsCol1[0].date}}</div>
+                                <div class="layout2-card-desc">{{stockNewsCol1[0].synopsis}}</div>
+                            </div>
+                            <!-- card end -->
+                            <!-- other item -->
+                            <div>
+                                <!-- item -->
+                                <div class="layout2-other-item flex" ng-repeat="n in stockNewsCol1other" ng-click="redirectToFunc('/news/'+n.id)" >
+                                    <img src="{{n.image}}""
+                                        style="width: 45%;" alt="" srcset="">
+                                    <div class="layout2-other-item-desc">
+                                        <div style="font-size: 1.1em;padding-left: 4px;">{{n.title}}</div>
+                                        <div style="font-size: 13px;padding-bottom: 8px;padding-left: 4px;">{{n.date}}</div>
+                                    </div>
+                                </div>
+                                <!-- item end -->
+                            </div>
+                        </div>
+                        <!-- column 2 -->
+                        <div class="layout2-col">
+                            <!-- card -->
+                            <div class="layout2-card" ng-click="redirectToFunc('/news/'+stockNewsCol1[0].id)" >
+                                <img src="{{stockNewsCol1[0].image}}" alt="" srcset="">
+                                <div class="layout2-card-title">{{stockNewsCol1[0].title}}</div>
+                                <div style="font-size: 13px;padding-bottom: 4px;">{{stockNewsCol1[0].date}}</div>
+                                <div class="layout2-card-desc">{{stockNewsCol1[0].synopsis}}</div>
+                            </div>
+                            <!-- card end -->
+                            <!-- other item -->
+                            <div>
+                                <!-- item -->
+                                <div class="layout2-other-item flex" ng-repeat="n in stockNewsCol1other" ng-click="redirectToFunc('/news/'+n.id)" >
+                                    <img src="{{n.image}}""
+                                        style="width: 45%;" alt="" srcset="">
+                                    <div class="layout2-other-item-desc">
+                                        <div style="font-size: 1.1em;padding-left: 4px;">{{n.title}}</div>
+                                        <div style="font-size: 13px;padding-bottom: 8px;padding-left: 4px;">{{n.date}}</div>
+                                    </div>
+                                </div>
+                                <!-- item end -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- stock news end -->
+                <!-- layout3 -->
+                <!-- world news -->
+                <div class="layout3">
+                    <div style="width: 100%;text-align: center;font-size: 1.2em;font-weight: 600;padding-bottom: 4px;">
+                        World News</div>
+                    <div style="width: 100%;border-bottom: 4px solid rgb(100, 150, 100);"></div>
+                    <div class="layout3-item-row" ng-controller="worldNews">
+                        <!-- item start -->
+                        <div class="layout3-item flex" ng-repeat="n in worldNews" ng-click="redirectToFunc('/news/'+n.id)">
+                            <div style="width: 360px;height: 200px;justify-content: flex-end;align-items: center;" class="flex"><img src="{{n.image}}" style="width: auto;height: 200px;" alt="" srcset=""></div>
+                            <div class="layout3-item-desc">
+                                <div style="font-size: 1.5em;">{{n.title}}</div>
+                                <div style="color: rgb(117, 84, 84);font-size: 14px;padding-top: 14px;">{{n.synopsis}}</div>
+                                <div style="padding-top: 14px;font-size: 15px;">{{n.date}}</div>
+                                <div class="tags">
+                                    <span class="tag" ng-repeat="t in n.tag">{{t}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- item end -->
+                    </div>
+                </div>
+                <!-- world news end -->
+            </div>
+        </div>
+    </div>
+
+
+</div>

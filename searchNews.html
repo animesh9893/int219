@@ -1,0 +1,22 @@
+<div ng-controller="searchNewsCtrl" class="set-width">
+    <div class="layout3">
+        <div style="width: 100%;text-align: center;font-size: 1.2em;font-weight: 600;padding-bottom: 4px;">
+            Search result : {{query}}</div>
+        <div style="width: 100%;border-bottom: 4px solid rgb(100, 150, 100);"></div>
+        <div class="layout3-item-row" ng-controller="worldNews">
+            <!-- item start -->
+            <div class="layout3-item flex" ng-repeat="n in result" ng-click="redirectToFunc('/news/'+n.id)">
+                <div style="width: 360px;height: 200px;justify-content: flex-end;align-items: center;" class="flex"><img src="{{n.image}}" style="width: auto;height: 200px;" alt="" srcset=""></div>
+                <div class="layout3-item-desc">
+                    <div style="font-size: 1.5em;">{{n.title}}</div>
+                    <div style="color: rgb(117, 84, 84);font-size: 14px;padding-top: 14px;">{{n.synopsis}}</div>
+                    <div style="padding-top: 14px;font-size: 15px;">{{n.date}}</div>
+                    <div class="tags">
+                        <span class="tag" ng-repeat="t in n.tag">{{t}}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- item end -->
+        </div>
+    </div>
+</div>
